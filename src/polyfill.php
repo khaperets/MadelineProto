@@ -31,7 +31,7 @@ function __destructure($list, $value): array
 
 $ampFilePolyfill = 'namespace Amp\\File {';
 foreach ([
-             //'stat' => 'getStatus',
+             'stat' => 'getStatus',
              //'lstat' => 'getLinkStatus',
              //'atime' => 'getAccessTime',
              //'ctime' => 'getCreationTime',
@@ -45,7 +45,7 @@ foreach ([
              //'chmod' => 'changePermissions',
              //'chown' => 'changeOwner',
              //'get' => 'read',
-             //'put' => 'write',
+             'put' => 'write',
              //'mkdir' => 'createDirectory',
          ] as $old => $new) {
     $ampFilePolyfill .= "if (!function_exists('$old')) { function $old(...\$args) { return $new(...\$args); } }";
