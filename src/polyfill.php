@@ -52,7 +52,7 @@ foreach ([
              'put' => 'write',
              'mkdir' => 'createDirectory',
          ] as $old => $new) {
-    $ampFilePolyfill .= "if (!function_exists($old)) { function $old(...\$args) { return $new(...\$args); } }";
+    $ampFilePolyfill .= "if (!function_exists('$old')) { function $old(...\$args) { return $new(...\$args); } }";
 }
 $ampFilePolyfill .= "}";
 eval($ampFilePolyfill);
