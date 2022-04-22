@@ -259,7 +259,7 @@ class Logger
                 $this->optional .= '.log';
             }
             if ($maxSize !== -1 && \file_exists($this->optional) && \filesize($this->optional) > $maxSize) {
-                \file_put_contents($this->optional, '');
+                //\file_put_contents($this->optional, '');
             }
         }
         $this->colors[self::ULTRA_VERBOSE] = \implode(';', [self::FOREGROUND['light_gray'], self::SET['dim']]);
@@ -275,7 +275,7 @@ class Logger
                 $this->newline = '<br>'.$this->newline;
             }
         } elseif ($this->mode === self::FILE_LOGGER) {
-            Snitch::logFile($this->optional);
+            //Snitch::logFile($this->optional);
             $this->stdout = new ResourceOutputStream(\fopen($this->optional, 'a'));
             if ($maxSize !== -1) {
                 $optional = &$this->optional;
@@ -306,14 +306,14 @@ class Logger
         self::$default = $this;
         if (PHP_SAPI !== 'cli' && PHP_SAPI !== 'phpdbg') {
             try {
-                \error_reporting(E_ALL);
-                \ini_set('log_errors', "1");
-                \ini_set('error_log', $this->mode === self::FILE_LOGGER
-                    ? $this->optional
-                    : Magic::$script_cwd.DIRECTORY_SEPARATOR.'MadelineProto.log');
-                \error_log('Enabled PHP logging');
+                //\error_reporting(E_ALL);
+                //\ini_set('log_errors', "1");
+                //\ini_set('error_log', $this->mode === self::FILE_LOGGER
+                //    ? $this->optional
+                //    : Magic::$script_cwd.DIRECTORY_SEPARATOR.'MadelineProto.log');
+                //\error_log('Enabled PHP logging');
             } catch (\danog\MadelineProto\Exception $e) {
-                $this->logger('Could not enable PHP logging');
+                //$this->logger('Could not enable PHP logging');
             }
         }
     }
