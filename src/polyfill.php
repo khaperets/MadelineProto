@@ -31,7 +31,6 @@ function __destructure($list, $value): array
 
 $ampFilePolyfill = 'namespace Amp\\File {';
 foreach ([
-             'open' => 'openFile',
              'stat' => 'getStatus',
              'lstat' => 'getLinkStatus',
              'size' => 'getSize',
