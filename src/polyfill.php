@@ -33,7 +33,6 @@ $ampFilePolyfill = 'namespace Amp\\File {';
 foreach ([
              'stat' => 'getStatus',
              'lstat' => 'getLinkStatus',
-             'size' => 'getSize',
              'isdir' => 'isDirectory',
              'mtime' => 'getModificationTime',
              'atime' => 'getAccessTime',
