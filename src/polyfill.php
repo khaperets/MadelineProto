@@ -38,7 +38,7 @@ foreach ([
              //'symlink' => 'createSymlink',
              //'link' => 'createHardlink',
              //'readlink' => 'resolveSymlink',
-             //'rename' => 'move',
+             'rename' => 'move',
              //'unlink' => 'deleteFile',
              //'rmdir' => 'deleteDirectory',
              //'scandir' => 'listFiles',
