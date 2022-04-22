@@ -86,7 +86,8 @@
         },
         "files": [
             "src/BigIntegor.php",
-            "src/YieldReturnValue.php"
+            "src/YieldReturnValue.php",
+            "src/polyfill.php"
         ]
     },
     "autoload-dev": {
