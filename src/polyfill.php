@@ -28,28 +28,3 @@ function __destructure($list, $value): array
 
     return $res;
 }
-
-$ampFilePolyfill = 'namespace Amp\\File {';
-foreach ([
-             //'stat' => 'getStatus',
-             //'lstat' => 'getLinkStatus',
-             //'atime' => 'getAccessTime',
-             //'ctime' => 'getCreationTime',
-             //'symlink' => 'createSymlink',
-             //'link' => 'createHardlink',
-             //'readlink' => 'resolveSymlink',
-             //'rename' => 'move',
-             //'unlink' => 'deleteFile',
-             //'rmdir' => 'deleteDirectory',
-             //'scandir' => 'listFiles',
-             //'chmod' => 'changePermissions',
-             //'chown' => 'changeOwner',
-             //'get' => 'read',
-             //'put' => 'write',
-             //'mkdir' => 'createDirectory',
-         ] as $old => $new) {
-    $ampFilePolyfill .= "function $old(...\$args) { return $new(...\$args); }";
-}
-$ampFilePolyfill .= "}";
-eval($ampFilePolyfill);
-unset($ampFilePolyfill);

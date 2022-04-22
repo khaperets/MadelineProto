@@ -25,9 +25,9 @@ use danog\MadelineProto\Ipc\IpcState;
 
 use function Amp\File\exists;
 use function Amp\File\openFile;
-use function Amp\File\put;
-use function Amp\File\rename as renameAsync;
-use function Amp\File\stat;
+use function Amp\File\write as put;
+use function Amp\File\move as renameAsync;
+use function Amp\File\getStatus as stat;
 
 /**
  * Session path information.
